@@ -4,10 +4,31 @@
 ![image](https://tvax1.sinaimg.cn/large/005vYU31ly1gu0alzx2yhj618c0h87d602.jpg)
 
 ### Requirements
+😄 To install requirements:
 ```
 torch
 einops
 ```
+### Usage
+1. First step
+```
+$git clone https://github.com/wangleiofficial/FAPEloss.git
+```
+
+2. Testing FAPE Loss
+```
+from fape import FAPEloss
+import torch
+
+# define the transformation
+predict_T = (torch.randn((1, 1, 3, 3)), torch.randn((1, 1, 3)))
+transformation = (torch.randn((1, 1, 3, 3)), torch.randn((1, 1, 3)))
+
+# define loss
+fape = FAPEloss()
+loss = fape(predict_T, transformation)
+```
+
 ### Citing AlphaFold paper
 ```
 @Article{AlphaFold2021,
